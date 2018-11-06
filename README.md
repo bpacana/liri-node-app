@@ -31,6 +31,6 @@ DO-WHAT-IT-SAYS
 SPOTIFY-THIS-SONG
 ![Image movie-this2](https://raw.githubusercontent.com/bpacana/liri-node-app/master/spotify-this-song.png)
 
-
+CLICK TO WATCH VIDEO OF FUNCTIONALITY.
 http://github.com - automatic!
 [LIRI VIDEO](https://drive.google.com/file/d/1Qpvozb58d08X7eq96HOIs6nEtjSLkptX/view)
