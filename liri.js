@@ -1,18 +1,15 @@
-//Require dotenv npm to link Spotify keys file
+//Link to Spotify keys
 require("dotenv").config();
-
-//Require keys.js file
 var keys = require("./keys.js");
 
-//Require request npm
 var request = require("request")
 
-//Require spotify npm
+//Spotify npm
 var Spotify = require('node-spotify-api');
-//Save spotify key to a variable
+//Link Spotify key to variable
 var spotify = new Spotify(keys.spotify);
 
-//Require moment npm
+//Moment npm
 var moment = require('moment');
 moment().format();
 
@@ -29,7 +26,6 @@ for (var i = 3; i < nodeArgs.length; i++) {
     if (i > 3 && i < nodeArgs.length) {
         userInput = userInput + "%20" + nodeArgs[i];
     }
-    //If userInput is only 1 word
     else {
         userInput += nodeArgs[i];
     }
@@ -51,16 +47,14 @@ function runLiri() {
                     console.log(error);
                 };
             });
-            //Run request to bandsintown with the specified artist
+            //Request to bandsintown with the specified artist
             var queryURL = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp"
             request(queryURL, function (error, response, body) {
-                //If no error and response is a success
                 if (!error && response.statusCode === 200) {
-                    //Parse the json response
+                 
                     var data = JSON.parse(body);
-                    //Loop through array
+                    
                     for (var i = 0; i < data.length; i++) {
-                        //Get venue name
                         console.log("Venue: " + data[i].venue.name);
                         //Append data to log.txt
                         fs.appendFileSync("log.txt", "Venue: " + data[i].venue.name + "\n", function (error) {
@@ -69,7 +63,6 @@ function runLiri() {
                             };
                         });
                         //Get venue location
-                        //If statement for concerts without a region
                         if (data[i].venue.region == "") {
                             console.log("Location: " + data[i].venue.city + ", " + data[i].venue.country);
                             //Append data to log.txt
@@ -123,7 +116,6 @@ function runLiri() {
                 }
                 //Assign data being used to a variable
                 var info = data.tracks.items
-                // console.log(info);
                 //Loop through all the "items" array
                 for (var i = 0; i < info.length; i++) {
                     //Store "album" object to variable
