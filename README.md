@@ -16,4 +16,4 @@ All results are returned in the command line, but also into a separate text file
 
 Technologies used: Javascript, Node.js, Moment.js, Bandsintown API, Spotify API, OMDb API
 
-
+![Image movie-this](https://bpacana.github.com/liri-node-app/movie-this2.png)
